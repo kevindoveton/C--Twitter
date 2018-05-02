@@ -12,14 +12,14 @@ namespace CSharpReactTwitter.Controllers {
     // GET api/values
     [HttpGet]
     public string Get() {
-      User kevin = new User { username = "kevin", id = 0 };
+      User kevin = new User { username = "kevin", id = 0, name="Kevin Doveton" };
 
-      string json = JsonConvert.SerializeObject(new {
-        results = new List<CSharpReactTwitter.Models.Tweet>() {
-          new Tweet { user = kevin, dateTime = DateTime.Now, text = "hello, world!" },
-          new Tweet { user = new User { username="person", id= 3 }, dateTime = DateTime.Parse("03/08/2018 23:50:31"), text = "this is a longer tweet!" }
+      string json = JsonConvert.SerializeObject(
+        new List<CSharpReactTwitter.Models.Tweet>() {
+          new Tweet { user = kevin, dateTime = DateTime.Now, text = "hello, world!", id=0 },
+          new Tweet { user = new User { username="amelia", id= 3, name="Amelia Parsons" }, dateTime = DateTime.Parse("03/08/2018 23:50:31"), text = "this is a longer tweet!", id=1 }
         }
-      });
+      );
       return json;
     }
 

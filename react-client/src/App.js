@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './App.css';
+import './App.scss';
 import { Newsfeed } from './Pages/Newsfeed';
 
 class App extends Component {
