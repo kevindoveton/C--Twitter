@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace CSharp_React_Twitter {
+namespace CSharpReactTwitter {
   public class Program {
     public static void Main(string[] args) {
 

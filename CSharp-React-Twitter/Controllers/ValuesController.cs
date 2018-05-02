@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CSharp_React_Twitter.Controllers {
+namespace CSharpReactTwitter.Controllers {
   [Route("api/[controller]")]
   public class ValuesController : Controller {
     

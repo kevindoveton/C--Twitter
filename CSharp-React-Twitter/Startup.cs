@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace CSharp_React_Twitter {
+namespace CSharpReactTwitter {
   public class Startup {
     public Startup(IConfiguration configuration) {
       Configuration = configuration;

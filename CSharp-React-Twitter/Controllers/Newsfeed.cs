@@ -3,15 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-
-namespace CSharp_React_Twitter.Controllers {
+using Newtonsoft.Json;
+using CSharpReactTwitter.Models;
+namespace CSharpReactTwitter.Controllers {
   [Route("api/[controller]")]
   public class Newsfeed : Controller {
 
     // GET api/values
     [HttpGet]
-    public IEnumerable<string> Get() {
-      return new string[] { "value1", "Kevin" };
+    public string Get() {
+      User kevin = new User { username = "kevin", id = 0 };
+
+      string json = JsonConvert.SerializeObject(new {
+        results = new List<CSharpReactTwitter.Models.Tweet>() {
+          new Tweet { user = kevin, dateTime = DateTime.Now, text = "hello, world!" },
+          new Tweet { user = new User { username="person", id= 3 }, dateTime = DateTime.Parse("03/08/2018 23:50:31"), text = "this is a longer tweet!" }
+        }
+      });
+      return json;
     }
 
     // GET api/values/5
