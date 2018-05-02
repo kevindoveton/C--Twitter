@@ -17,7 +17,7 @@ namespace CSharpReactTwitter.Controllers {
       string json = JsonConvert.SerializeObject(
         new List<CSharpReactTwitter.Models.Tweet>() {
           new Tweet { user = kevin, dateTime = DateTime.Now, text = "hello, world!", id=0 },
-          new Tweet { user = new User { username="amelia", id= 3, name="Amelia Parsons" }, dateTime = DateTime.Parse("03/08/2018 23:50:31"), text = "this is a longer tweet!", id=1 }
+          new Tweet { user = new User { username="amelia", id= 3, name="Amelia Parsons" }, dateTime = DateTime.Parse("05/02/2018 15:50:31"), text = "this is a longer tweet!", id=1 }
         }
       );
       return json;
