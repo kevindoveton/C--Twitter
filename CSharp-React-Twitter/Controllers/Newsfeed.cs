@@ -8,6 +8,7 @@ using CSharpReactTwitter.Models;
 namespace CSharpReactTwitter.Controllers {
   [Route("api/[controller]")]
   public class Newsfeed : Controller {
+    private DB db = new MockDatabase();
 
     // GET api/values
     [HttpGet]
@@ -15,10 +16,7 @@ namespace CSharpReactTwitter.Controllers {
       User kevin = new User { username = "kevin", id = 0, name="Kevin Doveton" };
 
       string json = JsonConvert.SerializeObject(
-        new List<CSharpReactTwitter.Models.Tweet>() {
-          new Tweet { user = kevin, dateTime = DateTime.Now, text = "hello, world!", id=0 },
-          new Tweet { user = new User { username="amelia", id= 3, name="Amelia Parsons" }, dateTime = DateTime.Parse("05/02/2018 15:50:31"), text = "this is a longer tweet!", id=1 }
-        }
+        db.GetNewsfeedForUser(0)
       );
       return json;
     }
