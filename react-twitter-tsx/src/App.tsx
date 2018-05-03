@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { Component } from 'react';
+// import { ModalContainer } from 'react-router-modal';
+
+import { Router } from './Components/Router';
 
 import './App.scss';
-import { Router } from './Components/Router';
 
 function App() {
   return (

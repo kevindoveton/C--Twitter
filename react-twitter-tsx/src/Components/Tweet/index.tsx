@@ -1,30 +1,24 @@
-import React, { Component } from 'react';
-import './style.scss';
-import { UserIcon } from '../UserIcon';
-import TimeAgo from 'javascript-time-ago'
- 
-// Load locale-specific relative date/time formatting rules.
-import en from 'javascript-time-ago/locale/en'
-TimeAgo.locale(en)
-const timeAgo = new TimeAgo('en-US')
+import * as React from 'react';
+import { Component } from 'react';
+import TimeAgo from 'javascript-time-ago';
+import * as en from 'javascript-time-ago/locale/en';
 
-class Tweet extends Component {
-  constructor(props) {
+import { UserIcon } from '../UserIcon';
+import './style.scss'; 
+
+TimeAgo.locale(en);
+const timeAgo = new TimeAgo('en-US');
+
+class Tweet extends Component<iTweetProps, {key: string}> {
+  constructor(props: iTweetProps) {
     super(props);
-    console.log(props);
-    // this.state = {
-    //   name: d.user.name,
-    //   username: d.user.username,
-    //   text: d.text,
-    //   time: this.formatTime(d.dateTime)
-    // }
   }
 
-  formatTime(time) {
-    if ((new Date() - 60 * 1000) < new Date(time)) {
+  formatTime(time: string) {
+    if ((Number(new Date()) - 60 * 1000) < Number(new Date(time))) {
       return 'just now';
     } else {
-      return timeAgo.format(new Date(time), 'twitter')
+      return timeAgo.format(new Date(time), 'twitter');
     }
   }
 
