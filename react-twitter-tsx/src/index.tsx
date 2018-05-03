@@ -10,7 +10,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { App } from './App';
 
-import './index.css';
+import './index.scss';
 
 const store = createStore<StoreState, EnthusiasmAction, any, any>(enthusiasm, {
   enthusiasmLevel: 1,
