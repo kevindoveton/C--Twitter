@@ -105,6 +105,8 @@ module.exports = {
       // We are waiting for https://github.com/facebookincubator/create-react-app/issues/2176.
       // { parser: { requireEnsure: false } },
 
+      { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
+
       // First, run the linter.
       // It's important to do this before Babel processes the JS.
       {
@@ -207,7 +209,7 @@ module.exports = {
             // its runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.(js|jsx|mjs|scss)$/, /\.html$/, /\.json$/],
+            exclude: [/\.(ts|tsx|js|jsx|mjs|scss)$/, /\.html$/, /\.json$/],
             loader: require.resolve('file-loader'),
             options: {
               name: 'static/media/[name].[hash:8].[ext]',
