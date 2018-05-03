@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Tweet } from '../../Components/Tweet'
+import { Tweet } from '../../Components/Tweet';
+import { Link } from 'react-router-dom';
+
 class Newsfeed extends Component {
   constructor(props) {
     super(props);
@@ -24,7 +26,9 @@ class Newsfeed extends Component {
     return (
       <div>
         {tweets.map(t => (
-          <Tweet key={t.id} tweet={t} user={t.user} />
+          <Link to={'/tweet/' + t.id} key={t.id}>
+            <Tweet key={t.id} tweet={t} user={t.user} link />
+          </Link>
         ))}
       </div>
     );
