@@ -24,7 +24,7 @@ class Newsfeed extends Component {
     return (
       <div>
         {tweets.map(t => (
-          <Tweet key={t.id} data={t} />
+          <Tweet key={t.id} tweet={t} user={t.user} />
         ))}
       </div>
     );

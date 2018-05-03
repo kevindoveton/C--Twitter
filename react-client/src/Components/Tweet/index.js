@@ -12,13 +12,12 @@ class Tweet extends Component {
   constructor(props) {
     super(props);
     console.log(props);
-    const d = props.data;
-    this.state = {
-      name: d.user.name,
-      username: d.user.username,
-      text: d.text,
-      time: this.formatTime(d.dateTime)
-    }
+    // this.state = {
+    //   name: d.user.name,
+    //   username: d.user.username,
+    //   text: d.text,
+    //   time: this.formatTime(d.dateTime)
+    // }
   }
 
   formatTime(time) {
@@ -30,7 +29,6 @@ class Tweet extends Component {
   }
 
   render() {
-    const {name, username, text, time} = this.state;
     return (
       <div className="tweet">
         <div className="tweet-left-column">
@@ -38,12 +36,12 @@ class Tweet extends Component {
         </div>
         <div className="tweet-right-column">
           <div className="tweet-header">
-            <span className="tweet-name">{name}</span>
-            <span className="tweet-username">@{username}</span>
-            <span className="tweet-date">{time}</span>
+            <span className="tweet-name">{this.props.user.name}</span>
+            <span className="tweet-username">@{this.props.user.username}</span>
+            <span className="tweet-date">{this.formatTime(this.props.tweet.dateTime)}</span>
           </div>
           <div className="tweet-body">
-            <p className="tweet-text">{text}</p>
+            <p className="tweet-text">{this.props.tweet.text}</p>
           </div>
         </div>
       </div>
