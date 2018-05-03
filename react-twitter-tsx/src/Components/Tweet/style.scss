@@ -1,0 +1,41 @@
+.tweet {
+  $tweetLeftColumn: 20%;
+  $tweetRightColumn: 100% - $tweetLeftColumn;
+
+  display: flex;
+  border: 1px solid black;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  margin: 1em;
+  background: #ffffff;
+
+  .tweet-left-column,
+  .tweet-right-column {
+    padding: .5em;
+  }
+
+  .tweet-left-column {
+    width: $tweetLeftColumn;
+    display: flex;
+
+    .user-icon {
+      margin-left: auto;
+    }
+  }
+
+  .tweet-right-column {
+    width: $tweetRightColumn;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .tweet-date,
+  .tweet-username,
+  .tweet-name,
+  .tweet-text {
+    padding: .25em;
+  }
+}
