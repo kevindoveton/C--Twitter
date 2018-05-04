@@ -1,6 +1,7 @@
 interface iUser {
   name: string,
-  username: string
+  username: string,
+  id: string
 }
 
 interface iNewsfeedRes {
@@ -17,4 +18,13 @@ interface iTweetProps {
 
 interface iNewsfeed {
   tweets: Array<iTweetProps>
+}
+
+interface iPropMatch {
+  path: string,
+  isExact: boolean,
+  url: string,
+  params: {
+    id?: number
+  }
 }

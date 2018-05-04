@@ -17,7 +17,7 @@ class Newsfeed extends Component {
   }
 
   componentWillMount() {
-    fetch('http://localhost:5000/api/newsfeed')
+    fetch(process.env.REACT_APP_API + '/newsfeed/')
     .then(r => r.json())
     .then(r => {
       this.setState({ tweets: r });

@@ -18,7 +18,7 @@ class Router extends Component {
         </Switch>
 
         {/* Modals - Note might need something behind it as well */}
-        <ModalRoute path="/tweet/" parentPath="/" component={SingleTweet} />
+        <ModalRoute path="/tweet/:id" parentPath="/" component={SingleTweet} />
         <ModalRoute path="/modal" parentPath="/">Test</ModalRoute>
         {/* This is the element that displays the modals */}
         <ModalContainer />

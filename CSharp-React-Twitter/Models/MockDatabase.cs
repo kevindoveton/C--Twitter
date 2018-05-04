@@ -64,5 +64,9 @@ namespace CSharpReactTwitter.Models {
       return _tweets;
     }
 
+    public override Tweet GetTweetById(int id) {
+      return _tweets.Find(item => item.id == id);
+    }
+
   }
 }
