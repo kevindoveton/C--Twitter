@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className="App-title">Welcome to Twitter</h1>
+        <h1 className="App-title">Welcome to Twityer</h1>
       </header>
       <main>
         <Router />

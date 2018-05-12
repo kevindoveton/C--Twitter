@@ -49,11 +49,6 @@ namespace CSharpReactTwitter.Models {
         text = "We have been defeated!",
         id = 4
       });
-
-
-
-      
-
     }
 
     public override User GetUserById(int id) {

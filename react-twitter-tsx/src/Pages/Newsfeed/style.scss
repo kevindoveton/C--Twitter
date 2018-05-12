@@ -1,0 +1,17 @@
+.newsfeed {
+  display: flex;
+  justify-content: center;
+
+  .newsfeed--tweets {
+    width: 564px;
+    margin: 16px;
+  }
+
+  .newsfeed--who-to-follow,
+  .newsfeed--twitter-details,
+  .newsfeed--summary {
+    margin-top: 16px;
+    width: 300px;
+  }
+
+}

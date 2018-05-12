@@ -1,0 +1,49 @@
+@import '../../variables';
+
+.user-summary {
+  background: $white;
+
+  .header {
+    display: block;
+    background: $blue;
+    height: 100px;
+    width: 100%;
+  }
+
+  .content-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+    padding: 16px;
+
+    .user-icon {
+      margin: -46px 0 0 0;
+    }
+
+    .user-details {
+      margin-left: 16px;
+      .name,
+      .handle {
+        display: block;
+      }
+    }
+
+  }
+
+  .stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 16px;
+
+    .stat {
+      width: 33%;
+    }
+  }
+
+
+
+}

@@ -3,11 +3,13 @@ import { Component } from 'react';
 import './style.scss';
 
 class UserIcon extends Component<{size?: number, userId?: string}> {
-  styles: React.CSSProperties;
+  styles: React.CSSProperties = {};
   constructor(props: any) {
     super(props);
     if (typeof props.userId === 'string') {
       this.styles.backgroundImage = '/img/u/' + props.userId;
+    } else {
+      this.styles.backgroundImage = 'url(\'https://placehold.it/100x100/333333\')';
     }
 
     if (typeof props.size === 'number') { 

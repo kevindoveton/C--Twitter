@@ -5,11 +5,11 @@
   $tweetRightColumn: 100% - $tweetLeftColumn;
 
   display: flex;
-  border: 1px solid black;
+  border-bottom: 1px solid $bg-grey;
   align-items: flex-start;
   justify-content: center;
   flex-direction: row;
-  margin: 1em;
+  // margin: 1em;
   background: #ffffff;
 
   .tweet-left-column,

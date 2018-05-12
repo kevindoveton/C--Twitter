@@ -1,0 +1,14 @@
+@import '../../variables';
+
+.twitter-details {
+  background: $white;
+  padding: 0 16px;
+  .links {
+    border-bottom: 1px solid $bg-grey;
+  }
+
+  .links,
+  .advertise {
+    padding: 16px 0;
+  }
+}
