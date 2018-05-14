@@ -3,10 +3,24 @@ import { Component } from 'react';
 
 import './style.scss';
 import { UserIcon } from '../UserIcon';
+import { WhoToFollowPerson } from '../WhoToFollowPerson';
 
 class WhoToFollow extends Component {
 
   render() {
+    const user1 = {
+      'name': 'Macroseft',
+      'username': 'macroseft',
+      'id': '0'
+    };
+    const user2 = {
+      'name': 'Merk Zuck',
+      'username': 'zuky',
+      'id': 'e8pe'
+    };
+
+    const users = [user1, user2];
+
     return (
       <div className="who-to-follow">
         <div className="who-to-follow--header">
@@ -16,19 +30,11 @@ class WhoToFollow extends Component {
         </div>
 
         <div className="who-to-follow--content">
-          <div className="person">
-            {/* <span className="person--followed-by">Followed by Someone and others</span> */}
-            <div className="person--details">
-              <div className="person-details--lhs">
-                <UserIcon />
+            {users.map((u, index, arr) => (
+              <div className="user">
+                <WhoToFollowPerson user={u} key={u.id} />
               </div>
-              <div className="person-details--rhs">
-                <h3 className="person-details--name">Macroseft</h3>
-                <span className="person-details--handle">@macroseft</span>
-                <button className="btn btn--outline">Follow</button>
-              </div>
-            </div>
-          </div>
+            ))}
         </div>
       </div>
     );

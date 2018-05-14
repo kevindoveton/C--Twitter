@@ -27,44 +27,11 @@
     padding-top: 1em;
     width: 100%;
 
-    .person {
-      width: 100%;
-      
-      .person--followed-by {
-        display: block;
-        color: $gray;
-        width: 100%;
-        text-align: right;
-      }
-      
-      .person--details {
-        display: flex;
+    .user {
+      margin-bottom: 1em;
 
-        .person-details--lhs {
-          width: 25%;
-        }
-
-        .person-details--rhs {
-          // display: flex;
-          // align-items: flex-start;
-          // justify-content: center;
-
-          .person-details--name,
-          .person-details--handle {
-            display: inline;
-          }
-
-          .person-details--handle {
-            color: $gray;
-            padding-left: .5em;
-          }
-
-          .btn {
-            display: block;
-            margin-top: .5em;
-            padding: 8px 32px;
-          }
-        }
+      &:last-of-type {
+        margin-bottom: 0;
       }
     }
   }
