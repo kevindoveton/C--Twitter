@@ -6,6 +6,8 @@ import { Tweet } from '../../Components/Tweet';
 import { UserSummary } from '../../Components/UserSummary';
 import { WhoToFollow } from '../../Components/WhoToFollow';
 import { TwitterDetails } from '../../Components/TwitterDetails';
+import { Header } from '../../Components/Header';
+import { NewTweet } from '../../Components/NewTweet';
 
 import './style.scss';
 
@@ -32,19 +34,28 @@ class Newsfeed extends Component {
     });
   }
 
+  componentDidMount() {
+    document.title = 'Newsfeed | Twityer';
+  }
+
   render() {
     const { tweets } = this.state;
     return (
-      <div className="newsfeed">
-        <div className="newsfeed--summary">
-          <UserSummary />
+      <div className="newsfeed container">
+        <div className="newsfeed--lhs">
+          <div className="newsfeed--summary">
+            <UserSummary />
+          </div>
         </div>
-        <div className="newsfeed--tweets">
-          {tweets.map(t => (
-            <Link to={'/tweet/' + t.id} key={t.id}>
-              <Tweet key={t.id} tweet={t} user={t.user} />
-            </Link>
-          ))}
+        <div className="newsfeed--c">
+          <div className="newsfeed--tweets">
+            <NewTweet />
+            {tweets.map(t => (
+              <Link to={'/tweet/' + t.id} key={t.id}>
+                <Tweet key={t.id} tweet={t} user={t.user} />
+              </Link>
+            ))}
+          </div>
         </div>
         <div className="newsfeed--rhs">
           <div className="newsfeed--who-to-follow">

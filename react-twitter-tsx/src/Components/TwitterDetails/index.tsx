@@ -5,13 +5,34 @@ import './style.scss';
 
 class TwitterDetails extends Component {
   render() {
-    const year = 2018;
+    const year = (new Date()).getFullYear();
+    const links = [
+      { 'text': year + ' Twityer'},
+      { 'text': 'About', link: '/about' },
+      { 'text': 'Help centre' },
+      { 'text': 'Privacy policy' },
+      { 'text': 'Cookies' },
+      { 'text': 'Ads info' },
+      { 'text': 'Brand' },
+      { 'text': 'Blog' },
+      { 'text': 'Status' },
+      { 'text': 'Apps' },
+      { 'text': 'Jobs' },
+      { 'text': 'Marketing' },
+      { 'text': 'Businesses' },
+      { 'text': 'Developers' }
+    ];
     return (
       <div className="twitter-details">
         <div className="links">
-          <span>&copy; {year} Twityer About Help Centre Terms Privacy policy Cookies Ads info 
-          Brand Blog Status Apps Jobs Marketing Businesses Developers
-          </span>
+          {links.map((l, index, arr) => (
+            <span key={index}>
+              {l.link 
+                ? <a href={l.link}>{l.text}</a>
+                : l.text
+              }
+              </span>
+          ))}
         </div>
         <div className="advertise">
           <span>Advertise with twityer</span>

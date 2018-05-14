@@ -14,7 +14,7 @@ class UserSummary extends Component {
           <div className="content-header">
             <UserIcon size={80} />
             <div className="user-details">
-            <span className="name">Kevin Doveton</span>
+            <h2 className="name">Kevin Doveton</h2>
             <span className="handle">@kevindoveton</span>
             </div>
           </div>

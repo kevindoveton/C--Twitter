@@ -2,4 +2,70 @@
 
 .who-to-follow {
   background: $white;
+  padding: .5em;
+
+  .who-to-follow--header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .header--title {
+      margin-right: auto;
+    }
+
+    .header--link {
+      color: $blue;
+      padding: 0 .25em;
+
+      &:last-of-type {
+        padding-right: 0;
+      }
+    }
+  }
+
+  .who-to-follow--content {
+    padding-top: 1em;
+    width: 100%;
+
+    .person {
+      width: 100%;
+      
+      .person--followed-by {
+        display: block;
+        color: $gray;
+        width: 100%;
+        text-align: right;
+      }
+      
+      .person--details {
+        display: flex;
+
+        .person-details--lhs {
+          width: 25%;
+        }
+
+        .person-details--rhs {
+          // display: flex;
+          // align-items: flex-start;
+          // justify-content: center;
+
+          .person-details--name,
+          .person-details--handle {
+            display: inline;
+          }
+
+          .person-details--handle {
+            color: $gray;
+            padding-left: .5em;
+          }
+
+          .btn {
+            display: block;
+            margin-top: .5em;
+            padding: 8px 32px;
+          }
+        }
+      }
+    }
+  }
 }
