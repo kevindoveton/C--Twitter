@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,9 +11,9 @@ namespace CSharpReactTwitter.Controllers {
     private DB db = new MockDatabase();
 
     // GET api/values
-    [HttpGet]
-    public string Get() {
-      return JsonConvert.SerializeObject(db.GetNewsfeedForUser(0));
+		[HttpGet("feed/{id}")]
+    public string GetUsersFeed(int id) {
+			return JsonConvert.SerializeObject(db.GetTweetsByUserId(id));
     }
 
     // GET api/values/5
@@ -38,3 +38,4 @@ namespace CSharpReactTwitter.Controllers {
     }
   }
 }
+*/

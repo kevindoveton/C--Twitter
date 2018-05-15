@@ -1,7 +1,10 @@
 interface iUser {
   name: string,
   username: string,
-  id: string
+  id: string,
+  followers?: number,
+  following?: number,
+  tweets?: number
 }
 
 interface iNewsfeedRes {

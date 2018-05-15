@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import './style.scss';
 import { UserIcon } from '../UserIcon';
@@ -13,10 +14,18 @@ class Header extends Component {
     return (
       <header className="twityer-header container">
         <div className="header-lhs">
-          <span>Home</span>
-          <span>Moments</span>
-          <span>Notifications</span>
-          <span>Messages</span>
+          <Link to="/">
+            <span>Home</span>
+          </Link>
+          <Link to="/">
+            <span>Moments</span>
+          </Link>
+          <Link to="/">
+            <span>Notifications</span>
+          </Link>
+          <Link to="/">
+            <span>Messages</span>
+          </Link>
         </div>
         <div className="header-c">
           <span>Logo</span>

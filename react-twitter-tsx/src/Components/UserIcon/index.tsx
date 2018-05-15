@@ -7,12 +7,12 @@ class UserIcon extends Component<{size?: number, userId?: string}> {
   constructor(props: any) {
     super(props);
     if (typeof props.userId === 'string') {
-      this.styles.backgroundImage = '/img/u/' + props.userId;
+      this.styles.backgroundImage = 'url(\'' + process.env.REACT_APP_API + '/user/img/' + props.userId + '\')';
     } else {
       this.styles.backgroundImage = 'url(\'https://placehold.it/100x100/333333\')';
     }
 
-    if (typeof props.size === 'number') { 
+    if (typeof props.size === 'number') {
       this.styles.width = String(props.size) + 'px';
       this.styles.height = String(props.size) + 'px';
     }
@@ -20,8 +20,8 @@ class UserIcon extends Component<{size?: number, userId?: string}> {
 
   render() {
     return (
-      <span 
-        className="user-icon" 
+      <span
+        className="user-icon"
         style={this.styles}
       >
         <span className="user-icon-description">icon</span>

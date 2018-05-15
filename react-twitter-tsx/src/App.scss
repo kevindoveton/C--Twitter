@@ -9,7 +9,7 @@ body {
   background: $bg-grey;
 }
 
-a { 
+a {
   color: inherit;
   text-decoration: none;
 
@@ -19,5 +19,26 @@ a {
 
   &:visited {
     color: inherit;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+
+  .container--c {
+    width: 50%;
+    margin: 0 16px;
+  }
+
+  .container--lhs,
+  .container--rhs {
+    width: 25%;
+  }
+
+  .container--c,
+  .container--lhs,
+  .container--rhs {
+    margin-top: 16px;
   }
 }
