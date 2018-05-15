@@ -13,7 +13,10 @@ namespace CSharpReactTwitter.Controllers {
     // GET api/values
     [HttpGet]
     public string Get() {
-      return JsonConvert.SerializeObject(db.GetNewsfeedForUser(0));
+			return JsonConvert.SerializeObject(new {
+        tweets = db.GetNewsfeedForUser(0),
+        user = db.GetUserById(0)
+      });
     }
   }
 }

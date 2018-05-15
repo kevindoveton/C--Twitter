@@ -7,6 +7,7 @@ import { Newsfeed } from '../../Pages/Newsfeed';
 import { SingleTweet } from '../../Pages/Single-Tweet';
 
 import 'react-router-modal/css/react-router-modal.css';
+import { UserProfile } from '../../Pages/UserProfile';
 
 class Router extends Component {
   render() {
@@ -15,11 +16,13 @@ class Router extends Component {
         <Switch>
           <Route exact={true} path="/" component={Newsfeed} />
           <Route path="/tweet" component={Newsfeed} />
+          <Route path="/user/:id" component={UserProfile} />
         </Switch>
 
         {/* Modals - Note might need something behind it as well */}
         <ModalRoute path="/tweet/:id" parentPath="/" component={SingleTweet} />
         <ModalRoute path="/modal" parentPath="/">Test</ModalRoute>
+
         {/* This is the element that displays the modals */}
         <ModalContainer />
       </div>

@@ -13,9 +13,10 @@ import './style.scss';
 
 class Newsfeed extends Component {
   state: {
-    tweets: Array<iNewsfeedRes>
+    tweets: Array<iNewsfeedRes>;
+    user?: iUser;
   };
-  
+
   constructor(props: any) {
     super(props);
     this.state = {
@@ -27,7 +28,10 @@ class Newsfeed extends Component {
     fetch(process.env.REACT_APP_API + '/newsfeed/')
     .then(r => r.json())
     .then(r => {
-      this.setState({ tweets: r });
+      this.setState({
+        tweets: r.tweets,
+        user: r.user
+      });
     })
     .catch((e) => {
       console.error('newsfeed: ' + e);
@@ -42,22 +46,22 @@ class Newsfeed extends Component {
     const { tweets } = this.state;
     return (
       <div className="newsfeed container">
-        <div className="newsfeed--lhs">
+        <div className="container--lhs">
           <div className="newsfeed--summary">
-            <UserSummary />
+            {typeof this.state.user !== 'undefined' && (<UserSummary user={this.state.user} />)}
           </div>
         </div>
-        <div className="newsfeed--c">
+        <div className="container--c">
           <div className="newsfeed--tweets">
             <NewTweet />
-            {tweets.map(t => (
-              <Link to={'/tweet/' + t.id} key={t.id}>
-                <Tweet key={t.id} tweet={t} user={t.user} />
+            {tweets.map((t, index, arr) => (
+              <Link to={'/tweet/' + t.id} key={index}>
+                <Tweet tweet={t} user={t.user} />
               </Link>
             ))}
           </div>
         </div>
-        <div className="newsfeed--rhs">
+        <div className="container--rhs">
           <div className="newsfeed--who-to-follow">
             <WhoToFollow />
           </div>

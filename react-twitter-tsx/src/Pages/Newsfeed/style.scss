@@ -1,26 +1,13 @@
 .newsfeed {
-  display: flex;
-  justify-content: center;
 
-  .newsfeed--tweets {
-    // width: 50%;
-    margin: 16px;
-  }
+  // .newsfeed--tweets {
+  //   margin: 0 16px;
+  // }
 
-  .newsfeed--who-to-follow,
-  .newsfeed--twitter-details,
-  .newsfeed--summary {
-    margin-top: 16px;
-    // width: 25%;
-  }
-
-  .newsfeed--lhs,
-  .newsfeed--rhs {
-    width: 25%;
-  }
-
-  .newsfeed--c {
-    width: 50%;
-  }
+  // .newsfeed--who-to-follow,
+  // .newsfeed--twitter-details,
+  // .newsfeed--summary {
+  //   // margin-top: 16px;
+  // }
 
 }

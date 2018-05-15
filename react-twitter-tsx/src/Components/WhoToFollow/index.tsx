@@ -31,8 +31,8 @@ class WhoToFollow extends Component {
 
         <div className="who-to-follow--content">
             {users.map((u, index, arr) => (
-              <div className="user">
-                <WhoToFollowPerson user={u} key={u.id} />
+              <div className="user" key={u.id}>
+                <WhoToFollowPerson user={u} />
               </div>
             ))}
         </div>

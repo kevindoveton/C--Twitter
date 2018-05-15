@@ -10,7 +10,7 @@ class TweetModal extends Component<{tweet: iNewsfeedRes}> {
     return (
       <div>
         <div className="single-tweet-header">
-          <UserIcon userId={tweet.user.id} />
+          <UserIcon userId={String(tweet.user.id)} />
           <span>{tweet.user.name}</span>
           <span>@{tweet.user.username}</span>
         </div>
