@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace CSharpReactTwitter.Models {
   public class User {
-    public string username { get; set; }
-    public int id { get; set; }
-    public string name { get; set; }
-		public int followers { get; set; }
-		public int following { get; set; }
-		public int tweets { get; set; }
+    public string Handle { get; set; }  
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public List<Tweet> Tweets { get; set; }
+  
+		public ICollection<Follow> Followers { get; set; }  
+		public ICollection<Follow> Following { get; set; }
   }
 }
