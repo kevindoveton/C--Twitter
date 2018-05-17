@@ -10,12 +10,19 @@ namespace CSharpReactTwitter.Database {
     }
 
     private static void AddUsers(ApiContext context) {
+      context.Users.Add(new Models.User { Handle = "kevin", Id = 5, Name = "Kevin Doveton" });
+			context.Users.Add(new Models.User { Handle = "amelia", Id = 1, Name = "Amelia Parsons" });
+      context.Users.Add(new Models.User { Handle = "mark", Id = 2, Name = "MarkyD" });
+      context.Users.Add(new Models.User { Handle = "bazz223", Id = 3, Name = "Trent Barry" });
+			context.Users.Add(new Models.User { Handle = "appel", Id = 4, Name = "Appel Corporation" });
 
-      context.Users.Add(new Models.User { Handle = "kevin", Id = 5, Name = "Kevin Doveton", Followers = 13, Following = 12 });
-      context.Users.Add(new Models.User { Handle = "amelia", Id = 1, Name = "Amelia Parsons", Followers = 3, Following = 245 });
-      context.Users.Add(new Models.User { Handle = "mark", Id = 2, Name = "MarkyD", Followers = 13, Following = 12 });
-      context.Users.Add(new Models.User { Handle = "bazz223", Id = 3, Name = "Trent Barry", Followers = 13, Following = 12 });
-      context.Users.Add(new Models.User { Handle = "appel", Id = 4, Name = "Appel Corporation", Followers = 21401, Following = 12 });
+
+			context.Follows.Add(new Models.Follow { FollowingId = 5, FollowerId = 4 });
+      context.Follows.Add(new Models.Follow { FollowingId = 2, FollowerId = 5 });
+			context.Follows.Add(new Models.Follow { FollowingId = 5, FollowerId = 2 });
+      context.Follows.Add(new Models.Follow { FollowingId = 1, FollowerId = 5 });
+			context.Follows.Add(new Models.Follow { FollowingId = 5, FollowerId = 1 });   
+
       context.SaveChanges();
     }
 

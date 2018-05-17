@@ -8,6 +8,7 @@ using CSharpReactTwitter.Database;
 
 using CSharpReactTwitter.Models;
 namespace CSharpReactTwitter.Controllers {
+	
   [Route("api/[controller]")]
   public class NewsfeedController : Controller {
 
@@ -20,12 +21,19 @@ namespace CSharpReactTwitter.Controllers {
     // GET api/newsfeed/
     [HttpGet]
     public async Task<IActionResult> Get() {
-      var users = await _context.Users.Include(u => u.Tweets).ToArrayAsync();
-      var response = users.Select(u => new {
-        u.Name,
-        u.Handle,
-        Tweets = u.Tweets.Select(t => t)
-      });
+
+      // get the following
+			var following = await _context.Follows
+										  .Where(x => x.FollowerId == 5)
+			                              .Select(x => x.FollowingId)
+										  .ToArrayAsync();   
+
+      // get all tweets from following
+			var tweets = await _context.Tweets
+									   .Where(x => following.Contains(x.UserId))
+									   .ToArrayAsync();
+
+			var response = tweets.Select(x => x);
 
       return Ok(response);
     }
