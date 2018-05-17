@@ -12,8 +12,15 @@ namespace CSharpReactTwitter.Controllers {
   public class TweetsController : Controller {
 		private readonly ApiContext _context;
 
+<<<<<<< HEAD
 		public TweetsController(ApiContext context) {
       this._context = context;
+=======
+    // GET api/values
+		[HttpGet("feed/{id}")]
+    public string GetUsersFeed(int id) {
+			return JsonConvert.SerializeObject(db.GetTweetsByUserId(id));
+>>>>>>> master
     }
 
     // GET api/values/5

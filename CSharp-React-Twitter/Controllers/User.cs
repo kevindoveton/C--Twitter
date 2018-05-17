@@ -2,14 +2,13 @@
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
 using System.Net;
 using Microsoft.EntityFrameworkCore;
 using CSharpReactTwitter.Database;
 
 namespace CSharpReactTwitter.Controllers {
-  
-	[Route("api/[controller]")]
+
+  [Route("api/[controller]")]
 	 public class UserController : ControllerBase {
 
 		private readonly ApiContext _context;
