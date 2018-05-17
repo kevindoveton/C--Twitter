@@ -20,7 +20,6 @@ namespace CSharpReactTwitter.Controllers {
     
     // GET api/newsfeed/
     [HttpGet]
-<<<<<<< HEAD
     public async Task<IActionResult> Get() {
 
       // get the following
@@ -37,13 +36,6 @@ namespace CSharpReactTwitter.Controllers {
 			var response = tweets.Select(x => x);
 
       return Ok(response);
-=======
-    public string Get() {
-			return JsonConvert.SerializeObject(new {
-        tweets = db.GetNewsfeedForUser(0),
-        user = db.GetUserById(0)
-      });
->>>>>>> master
     }
     
   }
