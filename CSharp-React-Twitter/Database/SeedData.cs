@@ -10,19 +10,51 @@ namespace CSharpReactTwitter.Database {
     }
 
     private static void AddUsers(ApiContext context) {
-      context.Users.Add(new Models.User { Handle = "kevin", Id = 5, Name = "Kevin Doveton" });
 			context.Users.Add(new Models.User { Handle = "amelia", Id = 1, Name = "Amelia Parsons" });
       context.Users.Add(new Models.User { Handle = "mark", Id = 2, Name = "MarkyD" });
       context.Users.Add(new Models.User { Handle = "bazz223", Id = 3, Name = "Trent Barry" });
 			context.Users.Add(new Models.User { Handle = "appel", Id = 4, Name = "Appel Corporation" });
+      context.Users.Add(new Models.User { Handle = "kevin", Id = 5, Name = "Kevin Doveton" });
+      context.Users.Add(new Models.User { Handle = "zuky", Id = 6, Name = "Merk Zuck" });
+      context.Users.Add(new Models.User { Handle = "macroseft", Id = 7, Name = "macroseft" });
 
 
-			context.Follows.Add(new Models.Follow { FollowingId = 5, FollowerId = 4 });
-      context.Follows.Add(new Models.Follow { FollowingId = 2, FollowerId = 5 });
-			context.Follows.Add(new Models.Follow { FollowingId = 5, FollowerId = 2 });
+      // following amelia - 1
       context.Follows.Add(new Models.Follow { FollowingId = 1, FollowerId = 5 });
-			context.Follows.Add(new Models.Follow { FollowingId = 5, FollowerId = 1 });   
+      context.Follows.Add(new Models.Follow { FollowingId = 1, FollowerId = 2 });
+      
+      // following mark - 2
+      context.Follows.Add(new Models.Follow { FollowingId = 2, FollowerId = 5 });
+      context.Follows.Add(new Models.Follow { FollowingId = 2, FollowerId = 1 });
 
+      // following bazz223 - 3
+      context.Follows.Add(new Models.Follow { FollowingId = 3, FollowerId = 1 });
+      context.Follows.Add(new Models.Follow { FollowingId = 3, FollowerId = 7 });
+
+      // following appel - 4
+      context.Follows.Add(new Models.Follow { FollowingId = 4, FollowerId = 1 });
+      context.Follows.Add(new Models.Follow { FollowingId = 4, FollowerId = 2 });
+      context.Follows.Add(new Models.Follow { FollowingId = 4, FollowerId = 3 });
+      context.Follows.Add(new Models.Follow { FollowingId = 4, FollowerId = 5 });
+
+      // following kevin - 5
+      context.Follows.Add(new Models.Follow { FollowingId = 5, FollowerId = 4 });
+      context.Follows.Add(new Models.Follow { FollowingId = 5, FollowerId = 2 });
+      context.Follows.Add(new Models.Follow { FollowingId = 5, FollowerId = 1 });
+      context.Follows.Add(new Models.Follow { FollowingId = 5, FollowerId = 6 });
+      context.Follows.Add(new Models.Follow { FollowingId = 5, FollowerId = 7 });
+
+      // following zuky - 6
+      context.Follows.Add(new Models.Follow { FollowingId = 6, FollowerId = 7 });
+      context.Follows.Add(new Models.Follow { FollowingId = 6, FollowerId = 2 });
+      context.Follows.Add(new Models.Follow { FollowingId = 6, FollowerId = 3 });
+
+      // following macroseft - 7
+      context.Follows.Add(new Models.Follow { FollowingId = 7, FollowerId = 2 });
+      context.Follows.Add(new Models.Follow { FollowingId = 7, FollowerId = 3 });
+      context.Follows.Add(new Models.Follow { FollowingId = 7, FollowerId = 5 });
+      context.Follows.Add(new Models.Follow { FollowingId = 7, FollowerId = 6 });
+      
       context.SaveChanges();
     }
 
