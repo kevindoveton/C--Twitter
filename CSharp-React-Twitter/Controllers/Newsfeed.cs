@@ -65,6 +65,43 @@ namespace CSharpReactTwitter.Controllers {
 
       return Ok(response);
     }
-    
-  }
+
+    [HttpGet("trending")]
+    public IActionResult GetTrending() {
+      var response = new[] {
+        new {
+          Heading = "NRLBroncosRoosters",
+          Hashtag = true,
+          SubHeading = "NRL players cops a falcon to the face"
+        },
+        new {
+          Heading = "AFLCrowsDog",
+          Hashtag = true,
+          SubHeading = "2,870 Tweets"
+        },
+         new {
+          Heading = "Prince Charles",
+          Hashtag = false,
+          SubHeading = "Meghan Markle asks Prince Charles to walk her down the aisle"
+        },
+        new {
+          Heading = "DragRace",
+          Hashtag = true,
+          SubHeading = "18.7k Tweets"
+        },
+        new {
+          Heading = "FridayMotivation",
+          Hashtag = true,
+          SubHeading = "4,811 Tweets"
+        },
+        new {
+          Heading = "SydFilmFest",
+          Hashtag = true,
+          SubHeading = ""
+        }
+      };
+      return Ok(response);
+    }
+
+    }
 }

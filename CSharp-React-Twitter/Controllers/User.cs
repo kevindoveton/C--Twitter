@@ -103,20 +103,23 @@ namespace CSharpReactTwitter.Controllers {
     [HttpPost("{handle}/follow")]
     public async Task<IActionResult> PostFollowUser(string handle, [FromBody] Models.User user) {
       var follower = await _context.Users.Where(x => x.Handle == handle).FirstAsync();
-
+      Models.User following;
       if (user.Handle != null) {
-        var following = await _context.Users.Where(x => x.Handle == user.Handle).FirstAsync();
-        await _context.Follows.AddAsync(new Models.Follow { FollowerId = follower.Id, FollowingId = following.Id });
+        following = await _context.Users.Where(x => x.Handle == user.Handle).FirstAsync();
       } else if (user.Id != 0) {
         // i'm not sure about this, technically 0 is an invalid id and also the initial state of an int 
         // so in theory everything is okay still feels a little hacky
         // we could create an inherited class but that seems uneccessary
-        var following = await _context.Users.Where(x => x.Id == user.Id).FirstAsync();
-        await _context.Follows.AddAsync(new Models.Follow { FollowerId = follower.Id, FollowingId = following.Id });
+        following = await _context.Users.Where(x => x.Id == user.Id).FirstAsync();
       } else {
         return StatusCode(400, "No Id or Handle");
       }
 
+      if (following.Handle == null) {
+        return StatusCode(400, "User does not exist");
+      }
+
+      await _context.Follows.AddAsync(new Models.Follow { FollowerId = follower.Id, FollowingId = following.Id });
       await _context.SaveChangesAsync();
       return Ok("Success");
     }

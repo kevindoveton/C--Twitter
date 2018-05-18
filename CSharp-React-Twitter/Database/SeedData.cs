@@ -10,7 +10,7 @@ namespace CSharpReactTwitter.Database {
     }
 
     private static void AddUsers(ApiContext context) {
-			context.Users.Add(new Models.User { Handle = "amelia", Id = 1, Name = "Amelia Parsons" });
+      context.Users.Add(new Models.User { Handle = "amelia", Id = 1, Name = "Amelia Parsons", Password = "", Salt = "" });
       context.Users.Add(new Models.User { Handle = "mark", Id = 2, Name = "MarkyD" });
       context.Users.Add(new Models.User { Handle = "bazz223", Id = 3, Name = "Trent Barry" });
 			context.Users.Add(new Models.User { Handle = "appel", Id = 4, Name = "Appel Corporation" });
