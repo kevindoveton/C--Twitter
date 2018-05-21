@@ -16,7 +16,7 @@ namespace CSharpReactTwitter.Controllers {
       this._context = context;
     }
 
-    // GET api/values/5
+    // GET /api/tweets/
     [HttpGet("{id}")]
 		public async Task<IActionResult> Get(int id) {
 			var tweet = await _context.Tweets
@@ -38,6 +38,17 @@ namespace CSharpReactTwitter.Controllers {
       return Ok(response);
     }
 
-    
+    // POST /api/tweets/
+    [HttpPost("")]
+    public async Task<IActionResult> PostTweets(Tweet tweet) {
+      // reset the user id explicitly
+      // TODO: this should come from some sort of cookie
+      tweet.UserId = 1;
+
+      await _context.Tweets.AddAsync(tweet);
+      await _context.SaveChangesAsync();
+      return Ok();
+    }
+
   }
 }
